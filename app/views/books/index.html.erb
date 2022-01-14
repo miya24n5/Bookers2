@@ -1,4 +1,5 @@
-<%= render 'books/list', books: @books %>
+
+<%= render partial: "list" %>
 
 
 <div>
@@ -18,7 +19,7 @@
   <% end %>
 
 
-  <p>Opinion : <%= book.opinion %></p>
+  <p>Opinion : <%= book.body %></p>
 </div>
 
   <% end %>
