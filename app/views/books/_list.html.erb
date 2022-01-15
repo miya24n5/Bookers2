@@ -1,14 +1,6 @@
-<h1>User info</h1>
-
-  <div>
-    <h4>name <%= @user_id_name %></h4>
-    <h4>introduction</h4>
-
-    <p><%= link_to "プロフィール編集", edit_user_path(current_user) %></p>
-  </div>
 
 <h1>New book</h1>
-  <%= form_with model: @book, local:true do |f| %>
+  <%= form_with model: book, local:true do |f| %>
 
     <h4>Title</h4>
       <%= f.text_field :title %>

@@ -1,22 +1,20 @@
-
-<%= render partial: "list" %>
+<%#= render "user/list" %>
+<%= render "list", book: @book %>
 
 
 <div>
+  <h1>index</h1>
 
 <h1>Books</h1>
 
 <% @books.each do |book| %>
 
 <div>
-  <%#= link_to user_path(user.id) do %>
-  <%#= image_tag book.get_image %>
-  <p><%#= image_tag 'no_image.jpg' %></p>
-  <%# end %>
+
   <p>Title</p>
-  <%= link_to book_path(book.id) do %>
+  <%#= link_to book_path(book.id) do %>
   <%= book.title %>
-  <% end %>
+  <%# end %>
 
 
   <p>Opinion : <%= book.body %></p>

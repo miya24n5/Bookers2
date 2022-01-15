@@ -1,15 +1,18 @@
+<%#= render "list" %>
+<%#= render "books/list" %>
 
-<%= render partial: "books/list" %>
+
 
 <h1>Users</h1>
 
 <% @users.each do |user| %>
 
-
 <div>
+  <%#= profile_image_tag user.get_profile_image %>
+  <%#= profile_image_tag 'no_image.jpg' %>
   <p>Name</p>
   <%= user.name %>
 </div>
-<%= link_to "show", books_path(user.id) %>
+<%= link_to "show", book_path(user.id) %>
 <% end %>
 
