@@ -3,13 +3,13 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-         
-  
+
+
   # has_one :profile_image, dependent: :destroy
   # accepts_nested_attributes_for :profile_image
   # accepts_attachments_for :profile_image, attachment: :profile_image
 
-  # has_many :books, dependent: :destroy
+  has_many :books, dependent: :destroy
 
 
   # def get_profile_image

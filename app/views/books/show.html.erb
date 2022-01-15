@@ -1,5 +1,5 @@
-<%#= render "user/list" %>
-<%#= render "list" %>
+<%= render "users/list", user: current_user %>
+<%= render "list", book: @book %>
 
 <div>
 
@@ -7,7 +7,7 @@
 
 <h1>Book detail</h1>
 
-<%#= link_to @user.name, user_path(@user) %>
+<%#= link_to user.name, user_path(@user) %>
 
 <p>Title <%= @book.title %></p>
 
