@@ -9,16 +9,18 @@ class User < ApplicationRecord
   # accepts_nested_attributes_for :profile_image
   # accepts_attachments_for :profile_image, attachment: :profile_image
 
+  has_one_attached :image
   has_many :books, dependent: :destroy
 
 
-  # def get_profile_image
-    # unless profile_image.attached?
-      # file_path = Rails.root.join('app/assets/images/no_image.jpg')
-      # profile_image.attach(io: File.open(file_path), filename: 'default-image.jpg', content_type: 'image/jpeg')
-    # end
-    # profile_image.variant(resize: "100x100").processed
-  # end
+  def get_image 
+    unless image.attached?
+      file_path = Rails.root.join('app/assets/images/no_image.jpg')
+      image.attach(io: File.open(file_path), filename: 'default-image.jpg', content_type: 'image/jpeg')
+    end
+    image
+    # profile_image.variant(resize: size).processed
+  end
 
 
 end

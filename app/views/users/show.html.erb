@@ -6,11 +6,13 @@
 <h1>Books</h1>
 
 <% @books.each do |book| %>
-
+<%# @users.each do |image| %>
 <div>
 
-  <%= form_with model: @user do |f| %>
-  <% end %>
+  <%#= form_with model: @user do |f| %>
+  <%# end %>
+  <%# @profile_image.each do |post_image| %>
+  <%= image_tag book.get_image %>
   <p>Title</p>
   <%= link_to book_path(book.id) do %>
   <%= book.title %>
@@ -20,3 +22,4 @@
 </div>
 
   <% end %>
+  <%# end %>

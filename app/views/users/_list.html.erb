@@ -2,6 +2,8 @@
 
   <div>
     <%#= attachment_image_tag user, :prodile_image, :fill, 10, 10, fallback: "no_image.jpg" %>
+    <%#= image_tag profile_image.get_image %>
+    <% image_tag user.get_image %>
     <h4>name <%= user.name %></h4>
     <h4>introduction <%= user.introduction %></h4>
 

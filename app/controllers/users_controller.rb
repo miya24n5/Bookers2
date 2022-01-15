@@ -3,9 +3,13 @@ class UsersController < ApplicationController
     @book = Book.new
     @user = User.find(params[:id])
     @books = @user.books
+    @users = User.all
+    # @profile_image = @user.profile_image
   end
 
   def index
+    # @user = User.find(params[:id])
+    # @profile_image = @user.profile_image
     @book = Book.new
     @users = User.all
   end
@@ -15,9 +19,12 @@ class UsersController < ApplicationController
   end
 
   def update
-    user = User.find(params[:id])
-    user.update(user_params)
-    redirect_to user_path(user.id)
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to user_path(user.id)
+    else
+    render :edit
+    end
   end
 
 
