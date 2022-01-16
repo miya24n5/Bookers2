@@ -19,7 +19,7 @@
 
 <% @books.each do |book| %>
 
-  <%= image_tag book.user.get_image %>
+  <%= image_tag book.user.get_profile_image("100x100") %>
 
   <p>Title</p>
   <%= link_to book_path(book.id) do %>

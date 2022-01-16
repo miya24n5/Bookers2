@@ -11,7 +11,7 @@
   <p>image</p>
   <%#= profile_image_tag user.get_profile_image %>
   <%#= profile_image_tag 'no_image.jpg' %>
-  <%= image_tag user.get_image %>
+  <%= image_tag user.get_profile_image("100x100") %>
   <p><%#= image_tag 'no_image.jpg' %></p>
   <p>name</p>
   <%= user.name %>

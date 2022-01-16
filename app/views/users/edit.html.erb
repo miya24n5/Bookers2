@@ -1,14 +1,20 @@
 <h2>User info</h2>
 
+<% if @user.errors.any? %>
+  <%= @user.errors.count %>error prohibited this obj from being saved:
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_with model: @user, local:true do |f| %>
   <label for="inputName">Name</label>
   <%= f.text_field :name, autofocus: true, id: "inputName", placeholder: @user.name %>
 
   <label for="inputImage">image</label>
   <%= f.file_field :profile_image, accept: "image/*" %>
-  <%#= f.fields_for :profile_image do |i| %>
-  <%#= i.attachment_field :profile_image %>
-  <%# end %>
 
   <label for="inputIntroduction">introduction</label>
   <%= f.text_area :introduction, placeholder: @user.introduction %>
