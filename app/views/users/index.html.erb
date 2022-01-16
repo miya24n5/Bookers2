@@ -8,11 +8,12 @@
 <% @users.each do |user| %>
 
 <div>
+  <p>image</p>
   <%#= profile_image_tag user.get_profile_image %>
   <%#= profile_image_tag 'no_image.jpg' %>
   <%= image_tag user.get_image %>
   <p><%#= image_tag 'no_image.jpg' %></p>
-  <p>Name</p>
+  <p>name</p>
   <%= user.name %>
 </div>
 <%= link_to "show", user_path(user.id) %>
