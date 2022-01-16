@@ -4,12 +4,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @books = @user.books
     @users = User.all
-    # @profile_image = @user.profile_image
   end
 
   def index
+    @user = current_user
     # @user = User.find(params[:id])
-    # @profile_image = @user.profile_image
     @book = Book.new
     @users = User.all
   end
