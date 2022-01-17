@@ -1,9 +1,40 @@
-<h1>User info</h1>
 
-  <div>
-    <%= image_tag user.get_profile_image("100x100") %>
-    <h4>name <%= @user.name %></h4>
-    <h4>introduction <%= @user.introduction %></h4>
-
-    <p><%= link_to "プロフィール編集", edit_user_path(current_user) %></p>
+  <h2>User info</h2>
+  <!--<img class="attachment user profile_image fallback" src="image_tag user.get_profile_image("100x100")">-->
+  <table class="table">
+    <tbody>
+      <tr><%= image_tag user.get_profile_image("100x100") %></tr>
+      <tr>
+        <th>name</th>
+        <th><%= @user.name %></th>
+      </tr>
+      <tr>
+        <th>introduction</th>
+        <th><%= @user.introduction %></th>
+      </tr>
+    </tbody>
+  </table>
+  <div class="row">
+    <%= link_to edit_user_path(current_user), class: 'btn btn-outline-secondary btn-block' do %>
+    <i class="fas fa-user-cog"></i>
+    <% end %>
   </div>
+  
+
+
+
+
+<!--<h2>User info</h2>-->
+
+<!--<table class="table table-striped">-->
+
+  <!--<div>-->
+    <%#= image_tag user.get_profile_image("100x100") %>
+    <!--<h4>name <%#= @user.name %></h4>-->
+    <!--<h4>introduction <%#= @user.introduction %></h4>-->
+
+    <!--<p><%#= link_to "プロフィール編集", edit_user_path(current_user) %></p>-->
+  <!--</div>-->
+
+<!--</table>-->
+
