@@ -4,7 +4,7 @@
   <%= @book.errors.count %>errors prohibited this obj from being saved:
   <ul>
     <% @book.errors.full_messages.each do |message| %>
-      <li><%= message class: 'text-red' %></li>
+      <li><%= message %></li>
     <% end %>
   </ul>
 <% end %>
@@ -12,10 +12,10 @@
 
 <%= form_with model: @book, local:true do |f| %>
 
-    <h4>Title</h4>
+    <a>Title</a>
       <%= f.text_field :title %>
 
-    <h4>Opinion</h4>
+    <a>Opinion</a>
       <%= f.text_area :body %>
 
     <%= f.submit 'Update Book' %>

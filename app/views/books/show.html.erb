@@ -10,27 +10,39 @@
 
 <h2>Book detail</h2>
 
-  <table class="table table-hover table-inverse">
+  <table class="table table-striped">
 
     <thead>
       <tr>
-        <td><%= image_tag @user.get_profile_image("100x100") %><br>
-            <%= @user.name %>
-        </td>
-        <td><%= @book.title %></td>
-        <td><%= @book.body %></td>
-
-           <% if @book.user == current_user %>
-
-        <td><%= link_to edit_book_path(@book), class: 'btn btn-sm btn-success' do %>
-            Edit
-            <% end %>
-        </td>
-        <td><%= link_to book_path(@book), method: :delete, "data-confirm" => "本当に消しますか？", class: 'btn btn-sm btn-danger' do %>
-            Dstroy
-            <% end %>
-        </td>
+        <td>
+          <%= image_tag @user.get_profile_image("100x100") %><br>
+          <%= link_to user_path(@book.user_id) do %>
+          <%= @book.user.name %>
           <% end %>
+        </td>
+        <td>
+          <%= link_to book_path do %>
+          <%= @book.title %>
+          <% end %>
+        </td>
+        <td>
+          <%= @book.body %>
+        </td>
+
+        <% if @book.user == current_user %>
+
+        <td>
+          <%= link_to edit_book_path(@book), class: 'btn btn-sm btn-success' do %>
+          Edit
+          <% end %>
+        </td>
+        <td>
+          <%= link_to book_path(@book), method: :delete, "data-confirm" => "本当に消しますか？", class: 'btn btn-sm btn-danger' do %>
+          Destroy
+          <% end %>
+        </td>
+        <% end %>
       </tr>
     </thead>
   </table>
+</div>

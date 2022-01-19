@@ -22,10 +22,10 @@
     <tbody>
       <% @users.each do |user| %>
       <tr>
-        <td><%= image_tag user.get_profile_image("50x50") %></td>
+        <td><%= image_tag user.get_profile_image("40x40") %></td>
         <td><%= user.name %></td>
         <td><%= link_to user_path(user.id) do %>
-            show
+            Show
             <% end %>
         </td>
       </tr>
