@@ -11,6 +11,7 @@ class User < ApplicationRecord
 
   has_one_attached :profile_image
   has_many :books, dependent: :destroy
+  belongs_to :favorite
 
   validates :name, uniqueness:true, length: { in: 2..20 }
   validates :introduction, length: { maximum: 50 }
